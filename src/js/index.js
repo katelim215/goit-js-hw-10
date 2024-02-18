@@ -12,6 +12,8 @@ function chooseBreed(data) {
     fetchBreeds(data)
         .then(breeds => {
             breeds.forEach(breed => {
+                loader.classList.replace('loader', 'is-hidden');
+                
                 const option = document.createElement("option");
                 option.value = breed.id;
                 option.textContent = breed.name;
